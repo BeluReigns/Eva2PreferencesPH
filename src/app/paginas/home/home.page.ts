@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular'
 import { TarjetaCitaComponent } from 'src/app/componentes/tarjeta-cita/tarjeta-cita.component'
 import { CommonModule } from '@angular/common'
 import { RouterLink } from '@angular/router'
+import { addIcons } from 'ionicons'
+import { settingsOutline, listOutline } from 'ionicons/icons'
 
 @Component({
   selector: 'app-home',
@@ -21,7 +23,12 @@ export class HomePage implements OnInit {
   constructor(
     private citasService: CitasService,
     private configuracionService: ConfiguracionService
-  ) {}
+  ) {
+    addIcons({
+      settingsOutline,
+      listOutline
+    })
+  }
 
   async ngOnInit(): Promise<void> {
     await this.cargarConfiguracion()

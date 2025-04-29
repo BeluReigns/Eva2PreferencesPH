@@ -6,6 +6,8 @@ import { TarjetaCitaComponent } from 'src/app/componentes/tarjeta-cita/tarjeta-c
 import { FormularioCitaComponent } from 'src/app/componentes/formulario-cita/formulario-cita.component'
 import { CommonModule } from '@angular/common'
 import { RouterLink } from '@angular/router'
+import { addIcons } from 'ionicons'
+import { homeOutline } from 'ionicons/icons'
 
 @Component({
   selector: 'app-gestion-citas',
@@ -17,7 +19,11 @@ import { RouterLink } from '@angular/router'
 export class GestionCitasPage implements OnInit {
   citas: Cita[] = []
 
-  constructor(private citasService: CitasService) {}
+  constructor(private citasService: CitasService) {
+    addIcons({
+      homeOutline
+    })
+  }
 
   async ngOnInit(): Promise<void> {
     await this.cargarCitas()
