@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core'
 import { CitasService } from 'src/app/servicios/citas.service'
 import { ConfiguracionService } from 'src/app/servicios/configuracion.service'
 import { Cita } from 'src/app/modelo/cita'
-import { IonicModule } from '@ionic/angular'
 import { TarjetaCitaComponent } from 'src/app/componentes/tarjeta-cita/tarjeta-cita.component'
 import { CommonModule } from '@angular/common'
 import { RouterLink } from '@angular/router'
 import { addIcons } from 'ionicons'
 import { settingsOutline, listOutline } from 'ionicons/icons'
 import { ViewWillEnter } from '@ionic/angular'
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonText, IonFooter, IonItem } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, TarjetaCitaComponent, RouterLink]
+  imports: [IonItem, IonHeader, CommonModule, TarjetaCitaComponent, RouterLink, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonText, IonFooter]
 })
 export class HomePage implements OnInit, ViewWillEnter {
   citaAleatoria: Cita | null = null
@@ -25,10 +25,7 @@ export class HomePage implements OnInit, ViewWillEnter {
     private citasService: CitasService,
     private configuracionService: ConfiguracionService
   ) {
-    addIcons({
-      settingsOutline,
-      listOutline
-    })
+    addIcons({settingsOutline,listOutline});
   }
 
   async ngOnInit(): Promise<void> {

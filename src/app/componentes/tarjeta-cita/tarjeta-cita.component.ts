@@ -1,16 +1,17 @@
-// IonList, IonItem, IonLabel, IonButtons, IonButton, IonIcon
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Cita } from 'src/app/modelo/cita';
-import { IonicModule } from '@ionic/angular'
+import { IonList, IonItem, IonLabel, IonIcon,IonButtons, IonButton } from '@ionic/angular/standalone'
 import { addIcons } from 'ionicons';
 import { trashOutline } from 'ionicons/icons';
+import { CommonModule } from '@angular/common'
+
 
 @Component({
   selector: 'app-tarjeta-cita',
   templateUrl: './tarjeta-cita.component.html',
   styleUrls: ['./tarjeta-cita.component.scss'],
   standalone: true,
-  imports: [IonicModule]
+  imports: [IonList, IonItem, IonLabel, IonIcon,IonButtons, IonButton, CommonModule ]
 })
 
 export class TarjetaCitaComponent {
@@ -20,9 +21,7 @@ export class TarjetaCitaComponent {
   @Output() eliminar = new EventEmitter<number>()
 
   constructor() {
-    addIcons({
-      trashOutline
-    })
+    addIcons({trashOutline});
   }
 
   onEliminar(): void {

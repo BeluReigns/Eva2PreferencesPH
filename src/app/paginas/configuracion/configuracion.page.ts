@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ConfiguracionService } from 'src/app/servicios/configuracion.service'
-import { IonicModule } from '@ionic/angular'
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonItem, IonLabel, IonToggle } from '@ionic/angular/standalone'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { RouterLink } from '@angular/router'
@@ -12,7 +12,7 @@ import { homeOutline } from 'ionicons/icons'
   templateUrl: './configuracion.page.html',
   styleUrls: ['./configuracion.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule, RouterLink]
+  imports: [CommonModule, FormsModule, RouterLink, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonItem, IonLabel, IonToggle]
 })
 export class ConfiguracionPage implements OnInit {
   eliminarActivado: boolean = false

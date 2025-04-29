@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core'
 import { Cita } from 'src/app/modelo/cita'
-import { IonicModule } from '@ionic/angular'
+import { IonList, IonItem, IonLabel, IonIcon,IonButtons, IonButton, IonText } from '@ionic/angular/standalone'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { addIcons } from 'ionicons'
@@ -11,7 +11,7 @@ import { addCircleOutline } from 'ionicons/icons'
   templateUrl: './formulario-cita.component.html',
   styleUrls: ['./formulario-cita.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule ]
+  imports: [CommonModule, FormsModule, IonList, IonItem, IonLabel, IonIcon, IonText, IonButton ]
 })
 export class FormularioCitaComponent {
   nuevaCita: Omit<Cita, 'id'> = {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { CitasService } from 'src/app/servicios/citas.service'
 import { Cita } from 'src/app/modelo/cita'
-import { IonicModule } from '@ionic/angular'
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonList, IonText } from '@ionic/angular/standalone'
 import { TarjetaCitaComponent } from 'src/app/componentes/tarjeta-cita/tarjeta-cita.component'
 import { FormularioCitaComponent } from 'src/app/componentes/formulario-cita/formulario-cita.component'
 import { CommonModule } from '@angular/common'
@@ -14,7 +14,7 @@ import { homeOutline } from 'ionicons/icons'
   templateUrl: './gestion-citas.page.html',
   styleUrls: ['./gestion-citas.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, TarjetaCitaComponent, FormularioCitaComponent, RouterLink]
+  imports: [CommonModule, TarjetaCitaComponent, FormularioCitaComponent, RouterLink, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonList, IonText]
 })
 export class GestionCitasPage implements OnInit {
   citas: Cita[] = []
