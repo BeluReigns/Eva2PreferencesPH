@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common'
 import { RouterLink } from '@angular/router'
 import { addIcons } from 'ionicons'
 import { settingsOutline, listOutline } from 'ionicons/icons'
+import { ViewWillEnter } from '@ionic/angular'
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ import { settingsOutline, listOutline } from 'ionicons/icons'
   standalone: true,
   imports: [CommonModule, IonicModule, TarjetaCitaComponent, RouterLink]
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, ViewWillEnter {
   citaAleatoria: Cita | null = null
   mostrarEliminar: boolean = false
 
@@ -45,6 +46,11 @@ export class HomePage implements OnInit {
 
   async eliminarCita(id: number): Promise<void> {
     await this.citasService.eliminarCita(id)
+    await this.cargarCitaAleatoria()
+  }
+
+  async ionViewWillEnter(): Promise<void> {
+    await this.cargarConfiguracion()
     await this.cargarCitaAleatoria()
   }
 }
