@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración</ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>¿Permitir eliminar cita en inicio?</ion-label>
+    <ion-toggle 
+      [(ngModel)]="eliminarActivado" 
+      (ionChange)="cambiarEstadoEliminar()">
+    </ion-toggle>
+  </ion-item>
+</ion-content>

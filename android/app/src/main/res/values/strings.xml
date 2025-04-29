@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">eva2preferences</string>
+    <string name="title_activity_main">eva2preferences</string>
+    <string name="package_name">ionic.eva2preferences</string>
+    <string name="custom_url_scheme">ionic.eva2preferences</string>
+</resources>

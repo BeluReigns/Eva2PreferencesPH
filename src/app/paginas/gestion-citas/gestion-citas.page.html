@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Citas</ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Formulario para agregar cita -->
+  <app-formulario-cita (agregarCita)="agregarCita($event)"></app-formulario-cita>
+
+  <!-- Lista de citas existentes -->
+  <ion-list>
+    <app-tarjeta-cita 
+      *ngFor="let cita of citas" 
+      [cita]="cita" 
+      [mostrarEliminar]="true" 
+      (eliminar)="eliminarCita($event)">
+    </app-tarjeta-cita>
+  </ion-list>
+
+  <ion-text *ngIf="citas.length === 0">
+    <p>No hay citas registradas.</p>
+  </ion-text>
+</ion-content>

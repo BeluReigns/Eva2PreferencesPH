@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cita del Día</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/configuracion']">
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-tarjeta-cita 
+    *ngIf="citaAleatoria" 
+    [cita]="citaAleatoria" 
+    [mostrarEliminar]="mostrarEliminar" 
+    (eliminar)="eliminarCita($event)">
+  </app-tarjeta-cita>
+
+  <ion-text *ngIf="!citaAleatoria">
+    <p>No hay citas disponibles.</p>
+  </ion-text>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button size="small" [routerLink]="['/gestion-citas']">
+          <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

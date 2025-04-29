@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-item lines="full">
+    <ion-label>
+      <h3>"{{ cita.frase }}"</h3>
+      <p>- {{ cita.autor }}</p>
+    </ion-label>
+
+    <ion-buttons *ngIf="mostrarEliminar" slot="end">
+      <ion-button size="small" color="danger" (click)="onEliminar()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-list>
+
+

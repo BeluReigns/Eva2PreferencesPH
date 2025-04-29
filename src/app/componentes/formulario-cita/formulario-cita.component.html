@@ -1,0 +1,47 @@
+<ion-list>
+  <form #citaForm="ngForm" (ngSubmit)="onSubmit(citaForm)">
+    <!-- Campo Frase -->
+    <ion-item>
+      <ion-label position="floating">Frase</ion-label>
+      <ion-input 
+        [(ngModel)]="nuevaCita.frase" 
+        name="frase" 
+        required 
+        minlength="5"
+        #fraseCtrl="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="fraseCtrl.invalid && fraseCtrl.touched">
+      <p *ngIf="fraseCtrl.errors?.['required']">La frase es obligatoria.</p>
+      <p *ngIf="fraseCtrl.errors?.['minlength']">Mínimo 5 caracteres.</p>
+    </ion-text>
+
+    <!-- Campo Autor -->
+    <ion-item>
+      <ion-label position="floating">Autor</ion-label>
+      <ion-input 
+        [(ngModel)]="nuevaCita.autor" 
+        name="autor" 
+        required 
+        minlength="2"
+        #autorCtrl="ngModel">
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="autorCtrl.invalid && autorCtrl.touched">
+      <p *ngIf="autorCtrl.errors?.['required']">El autor es obligatorio.</p>
+      <p *ngIf="autorCtrl.errors?.['minlength']">Mínimo 2 caracteres.</p>
+    </ion-text>
+
+    <!-- Botón Agregar -->
+    <div class="boton-agregar">
+      <ion-button 
+        type="submit" 
+        size="small" 
+        expand="block" 
+        [disabled]="citaForm.invalid">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Agregar
+      </ion-button>
+    </div>
+  </form>
+</ion-list>
